@@ -1,0 +1,6 @@
+{
+  "name": "Kenti's Corner",
+  "description": "Living Your Best Life – A premium lifestyle editorial on health, sustainable wealth, and family.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

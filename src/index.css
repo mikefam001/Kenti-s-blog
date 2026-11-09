@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "EB Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-canvas: #FAF8F3;
+  --color-canvas-card: #FFFFFF;
+  --color-forest: #234B3B;
+  --color-forest-dark: #1B3B2E;
+  --color-forest-light: #3E6655;
+  --color-sage: #8BA58D;
+  --color-sage-light: #CEEACF;
+  --color-champagne: #D9C5A1;
+  --color-champagne-light: #F5E0BB;
+  --color-charcoal: #191D17;
+  --color-charcoal-light: #252923;
+  --color-warm-grey: #74776F;
+  --color-hairline: #E8E5DD;
+  --color-terracotta: #D18672;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: var(--color-charcoal);
+    background-color: var(--color-canvas);
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom editorial components */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 3.75rem;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-bottom: 2px;
+  color: var(--color-forest);
+  font-weight: 500;
+}
+
+.hairline-border {
+  border-color: var(--color-hairline);
+}
+
+.ambient-shadow {
+  box-shadow: 0 12px 32px -4px rgba(35, 75, 59, 0.05), 0 4px 12px -2px rgba(37, 41, 35, 0.03);
+}
+
+.ambient-card-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ambient-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -6px rgba(35, 75, 59, 0.08), 0 6px 16px -3px rgba(37, 41, 35, 0.04);
+}

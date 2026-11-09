@@ -1,0 +1,2447 @@
+MASTER SOFTWARE IMPLEMENTATION PROMPT
+
+KENTI'S CORNER — COMPLETE FRONTEND WEB APPLICATION
+
+1. YOUR ROLE AND RESPONSIBILITIES
+
+Act as a complete senior software engineering and product development team consisting of:
+
+Senior Frontend Architect.
+
+Senior React and TypeScript Developer.
+
+UI/UX Implementation Specialist.
+
+Responsive Web Developer.
+
+Accessibility Engineer.
+
+SEO Specialist.
+
+Software Quality Assurance Engineer.
+
+Performance Optimization Engineer.
+
+Application Security Reviewer.
+
+Your responsibility is to transform the attached Google Stitch designs into a complete, functional, responsive and production-quality browser-based web application.
+
+The application name is:
+
+KENTI'S CORNER
+
+The central brand theme is:
+
+LIVING YOUR BEST LIFE.
+
+This is an implementation assignment, not a new design assignment.
+
+You must carefully study the attached Google Stitch designs, understand their layout, structure, typography, colour palette, spacing, components, imagery, visual hierarchy and responsive behaviour before implementing the application.
+
+The supplied Google Stitch designs are the primary visual source of truth.
+
+Your objective is to reproduce the approved designs as faithfully as possible while ensuring that all interactive elements, navigation, content and application functionality work correctly.
+
+Do not replace the approved design with your own interpretation.
+
+Do not simplify the design unnecessarily.
+
+Do not produce a generic blog template.
+
+Do not produce a static screenshot or a collection of non-functional mockup screens.
+
+Build the actual working web application.
+
+2. PROJECT BACKGROUND AND BUSINESS OBJECTIVE
+
+Kenti's Corner is a premium lifestyle and personal development blog built around the philosophy of living a healthier, happier, more financially secure and more fulfilling life.
+
+The platform provides useful information, practical advice, inspiration and educational content across three major lifestyle categories:
+
+HEALTH & WELLNESS.
+
+FINANCE.
+
+FAMILY.
+
+The application must establish Kenti's Corner as a welcoming, informative, credible and visually distinctive lifestyle publication.
+
+Primary objectives
+
+Inspire readers to make positive lifestyle changes.
+
+Provide useful and practical health and wellness information.
+
+Promote responsible financial education and better money management.
+
+Encourage stronger family relationships and meaningful connections.
+
+Make discovering and reading articles simple and enjoyable.
+
+Deliver a premium editorial experience across all devices.
+
+Target audience
+
+The application should serve:
+
+Young adults.
+
+Working professionals.
+
+Parents.
+
+Families.
+
+Entrepreneurs.
+
+Individuals interested in personal development.
+
+Readers interested in health, wellness and financial literacy.
+
+The content should be internationally relevant, inclusive and culturally sensitive.
+
+Where financial examples are useful, include realistic Nigerian Naira (NGN) examples where appropriate, without restricting the platform to a Nigerian-only audience.
+
+3. MANDATORY PROJECT CONSTRAINTS
+
+These requirements are absolute and must not be violated.
+
+Application constraints
+
+Build a browser-based web application.
+
+Implement exactly THREE page templates.
+
+No authentication.
+
+No registration.
+
+No login.
+
+No backend application logic.
+
+No database.
+
+No Firebase.
+
+No Supabase.
+
+No external CMS.
+
+No admin dashboard.
+
+No user dashboard.
+
+No payment gateway.
+
+No subscription management.
+
+No unnecessary external API integrations.
+
+No Gemini API integration.
+
+No unnecessary server-side functionality.
+
+No additional standalone internal pages.
+
+No Lorem Ipsum content.
+
+No non-functional buttons or decorative controls pretending to be functional.
+
+The three permitted page templates
+
+PAGE 1: HOME PAGE
+
+Route: /
+
+PAGE 2: EXPLORE / CATEGORIES PAGE
+
+Route: /explore
+
+PAGE 3: ARTICLE DETAILS PAGE
+
+Route: /article/:slug
+
+The Article Details route is one reusable page template that renders different articles based on their slugs.
+
+It does not constitute multiple page designs.
+
+Strict page-count rule
+
+The application must contain exactly three page templates.
+
+Do not create separate pages for:
+
+Health & Wellness.
+
+Finance.
+
+Family.
+
+About.
+
+Contact.
+
+Privacy Policy.
+
+Terms and Conditions.
+
+Search.
+
+Saved Articles.
+
+Author Profiles.
+
+Error Pages.
+
+Where such functionality is needed, use existing page sections, inline content, overlays, accessible dialogs, browser-native interactions or appropriate external links.
+
+For an unknown article slug, display a helpful not-found state within the existing Article Details template.
+
+Never increase the page count to accommodate missing functionality.
+
+4. TECHNOLOGY STACK AND IMPLEMENTATION ARCHITECTURE
+
+Use a modern, maintainable frontend architecture.
+
+Required technologies
+
+React.
+
+TypeScript.
+
+Vite or the existing compatible build environment.
+
+CSS Modules, well-organised global CSS or Tailwind CSS.
+
+React Router for client-side navigation.
+
+Lucide React for consistent icons where needed.
+
+Use the technologies already supported by the generated environment where possible.
+
+Do not introduce unnecessary dependencies.
+
+Architecture principles
+
+Follow:
+
+Component-based development.
+
+Separation of concerns.
+
+Reusable UI components.
+
+Strong TypeScript typing.
+
+Maintainable code organisation.
+
+Predictable state management.
+
+Single source of truth for article data.
+
+Consistent design tokens.
+
+Accessible component patterns.
+
+Error handling.
+
+Defensive programming.
+
+Avoid:
+
+Monolithic components.
+
+Duplicated code.
+
+Unnecessary abstractions.
+
+Excessive use of global state.
+
+Uncontrolled direct DOM manipulation.
+
+Unnecessary third-party packages.
+
+Hardcoded repeated article content inside individual components.
+
+Recommended project structure
+
+Organise the application using a clear and maintainable structure similar to:
+
+src/
+app/
+App.tsx
+router.tsx
+
+components/
+layout/
+AnnouncementBar.tsx
+Header.tsx
+Navigation.tsx
+MobileNavigation.tsx
+Footer.tsx
+PageContainer.tsx
+
+common/
+  Button.tsx
+  IconButton.tsx
+  Badge.tsx
+  Breadcrumb.tsx
+  SearchOverlay.tsx
+  EmptyState.tsx
+  Dialog.tsx
+  BackToTop.tsx
+
+articles/
+  ArticleCard.tsx
+  ArticleGrid.tsx
+  FeaturedArticle.tsx
+  CategoryFilter.tsx
+  ArticleHeader.tsx
+  ArticleBody.tsx
+  AuthorProfile.tsx
+  RelatedArticles.tsx
+  ReadingProgress.tsx
+  TableOfContents.tsx
+  ShareControls.tsx
+  BookmarkButton.tsx
+
+pages/
+HomePage.tsx
+ExplorePage.tsx
+ArticlePage.tsx
+
+data/
+articles.ts
+authors.ts
+categories.ts
+
+hooks/
+useArticleSearch.ts
+useBookmarks.ts
+useReadingProgress.ts
+
+types/
+article.ts
+category.ts
+
+styles/
+tokens.css
+global.css
+typography.css
+components.css
+responsive.css
+
+utils/
+search.ts
+readingTime.ts
+storage.ts
+sharing.ts
+
+assets/
+images/
+
+main.tsx
+
+This is a recommended structure, not an excuse to create unnecessary files or dependencies. Adapt it to the existing environment while preserving the separation of responsibilities.
+
+5. GOOGLE STITCH DESIGN FIDELITY
+
+This is one of the most important requirements.
+
+Treat the attached Google Stitch designs as approved implementation specifications.
+
+Before coding:
+
+Inspect every supplied design.
+
+Identify the three page templates.
+
+Identify desktop and mobile variations.
+
+Extract the design tokens.
+
+Identify reusable components.
+
+Understand the layout grid.
+
+Understand the navigation and footer.
+
+Identify the typography hierarchy.
+
+Identify image ratios and image placement.
+
+Identify interactive states represented in the designs.
+
+Design fidelity requirements
+
+Reproduce the supplied designs as closely as possible.
+
+Preserve:
+
+Brand identity.
+
+Logo treatment.
+
+Colours.
+
+Typography.
+
+Font weights.
+
+Font sizes.
+
+Spacing.
+
+Margins.
+
+Padding.
+
+Border radius.
+
+Card proportions.
+
+Button appearance.
+
+Image dimensions.
+
+Image positioning.
+
+Content alignment.
+
+Navigation structure.
+
+Footer structure.
+
+Visual hierarchy.
+
+Responsive layout behaviour.
+
+Do not arbitrarily replace images with unrelated images.
+
+Where image assets are supplied, use the exact supplied assets.
+
+Where assets are missing, select appropriate high-quality editorial imagery consistent with the original design.
+
+Do not use emoji as substitutes for professional icons.
+
+Visual implementation review
+
+After implementation, compare the rendered application against the supplied Stitch references.
+
+Correct:
+
+Layout inconsistencies.
+
+Incorrect font sizing.
+
+Unbalanced spacing.
+
+Missing sections.
+
+Incorrect image proportions.
+
+Misaligned components.
+
+Inconsistent colours.
+
+Unnecessary decorative elements.
+
+Differences between desktop and mobile designs.
+
+The final application should closely match the approved design, not merely resemble it.
+
+6. BRANDING AND DESIGN SYSTEM
+
+The brand is Kenti's Corner.
+
+Tagline:
+
+"Living Your Best Life."
+
+Supporting brand message:
+
+"Wellness, wealth and family — thoughtfully connected."
+
+Use the supplied Stitch design tokens as the primary authority.
+
+Where a token is not specified, use the following reference palette:
+
+Warm ivory: #FAF8F3.
+
+White: #FFFFFF.
+
+Deep forest green: #234B3B.
+
+Sage green: #8BA58D.
+
+Champagne: #D9C5A1.
+
+Charcoal: #252923.
+
+Warm grey: #74776F.
+
+Soft neutral border: #E8E5DD.
+
+Category colours:
+
+Health & Wellness: Sage green.
+
+Finance: Champagne and deep green.
+
+Family: Warm terracotta and earthy neutrals.
+
+Recommended typography where the Stitch designs do not specify otherwise:
+
+Headings: Playfair Display.
+
+Body text: Inter.
+
+Metadata and labels: Inter.
+
+Design token implementation
+
+Create reusable CSS variables for:
+
+Colours.
+
+Typography.
+
+Font sizes.
+
+Font weights.
+
+Spacing.
+
+Container widths.
+
+Border radii.
+
+Shadows.
+
+Breakpoints.
+
+Transitions.
+
+Component dimensions.
+
+Do not scatter arbitrary colour and spacing values throughout the codebase.
+
+All pages must use the same design tokens.
+
+7. GLOBAL APPLICATION LAYOUT
+
+All three page templates must share a consistent application shell.
+
+7.1 Announcement bar
+
+Implement the announcement bar shown in the Stitch designs.
+
+Suggested content:
+
+"A little inspiration for living a fuller, healthier and happier life."
+
+Requirements:
+
+Responsive.
+
+Visually subtle.
+
+Consistent across pages.
+
+No unnecessary animation.
+
+7.2 Header and navigation
+
+Implement the complete global navigation.
+
+Navigation items:
+
+Home.
+
+Explore.
+
+Health & Wellness.
+
+Finance.
+
+Family.
+
+Additional controls:
+
+Search.
+
+Optional theme toggle, if present in the approved design.
+
+Navigation behaviour:
+
+HOME:
+Navigate to /.
+
+EXPLORE:
+Navigate to /explore with All Articles selected.
+
+HEALTH & WELLNESS:
+Navigate to /explore?category=health.
+
+FINANCE:
+Navigate to /explore?category=finance.
+
+FAMILY:
+Navigate to /explore?category=family.
+
+The Explore page must read and respond to the category query parameter.
+
+Selecting another category must update the interface and URL without introducing another page.
+
+Header requirements
+
+Correct active navigation state.
+
+Sticky positioning where appropriate.
+
+Responsive behaviour.
+
+Accessible navigation.
+
+Keyboard interaction.
+
+Proper focus indicators.
+
+Mobile navigation menu.
+
+No horizontal overflow.
+
+No broken navigation links.
+
+The brand logo must always return the reader to the homepage.
+
+7.3 Footer
+
+Implement the same global footer across all three pages.
+
+Include:
+
+BRAND:
+
+Kenti's Corner.
+
+Living Your Best Life.
+
+Short brand description.
+
+EXPLORE:
+
+Home.
+
+Explore.
+
+Health & Wellness.
+
+Finance.
+
+Family.
+
+ABOUT:
+
+Our Story.
+
+Editorial Values.
+
+Contact.
+
+LEGAL:
+
+Privacy Notice.
+
+Terms of Use.
+
+Editorial Disclaimer.
+
+SOCIAL:
+
+Instagram.
+
+Facebook.
+
+Pinterest.
+
+BOTTOM:
+
+Copyright statement.
+
+Back-to-top control.
+
+Copyright:
+"© 2026 Kenti's Corner. All rights reserved."
+
+Footer destinations must not create additional internal pages.
+
+For internal information such as Our Story or Editorial Values, use an appropriate accessible dialog or inline section.
+
+For contact, use an appropriate email link only if a real address has been supplied. Otherwise, do not invent contact information.
+
+Do not invent social media URLs.
+
+8. PAGE 1 IMPLEMENTATION — HOMEPAGE
+
+Implement the homepage to match the supplied Stitch homepage design.
+
+The homepage should introduce the publication, communicate its value and encourage article discovery.
+
+Section 1: Hero
+
+Headline:
+
+"Live Well. Grow Strong. Love Deeply."
+
+Supporting copy:
+
+"Welcome to Kenti's Corner — your space for practical wisdom, everyday inspiration and meaningful ideas to help you live a healthier, happier and more fulfilling life."
+
+Primary CTA:
+"Explore Articles"
+
+Destination:
+/explore
+
+Secondary CTA:
+"Discover Our Categories"
+
+Destination:
+The category section on the homepage.
+
+Requirements:
+
+Accurate image placement.
+
+Responsive layout.
+
+Proper typography.
+
+Correct button behaviour.
+
+Accessible image descriptions.
+
+Section 2: Welcome introduction
+
+Heading:
+
+"A Little Corner for a Better Life."
+
+Explain the philosophy of Kenti's Corner.
+
+Content must communicate that living your best life is about intentional decisions, personal growth and meaningful everyday experiences rather than perfection.
+
+Section 3: Three category cards
+
+Display exactly three primary category cards.
+
+HEALTH & WELLNESS
+
+Description:
+"Discover practical ways to nurture your body, protect your mind and build healthier everyday habits."
+
+FINANCE
+
+Description:
+"Build a healthier relationship with money through practical financial knowledge, smarter decisions and intentional planning."
+
+FAMILY
+
+Description:
+"Celebrate meaningful relationships, stronger family bonds and the everyday moments that make life special."
+
+Each card must contain:
+
+Image.
+
+Category title.
+
+Description.
+
+Explore CTA.
+
+Category card behaviour:
+Each card must navigate to the Explore page with the corresponding category preselected.
+
+Section 4: Featured article
+
+Featured article:
+
+"Small Daily Habits That Can Transform Your Life."
+
+Category:
+Health & Wellness.
+
+Excerpt:
+
+"Lasting change rarely happens overnight. Discover how small, intentional daily habits can help you build a healthier and more fulfilling lifestyle."
+
+Display:
+
+Cover image.
+
+Category badge.
+
+Title.
+
+Excerpt.
+
+Author.
+
+Date.
+
+Reading time.
+
+Read Article CTA.
+
+The article must exist in the central article dataset.
+
+Section 5: Latest articles
+
+Display at least six articles.
+
+Distribute them across the three categories.
+
+Each article card must contain:
+
+Cover image.
+
+Category.
+
+Title.
+
+Excerpt.
+
+Author.
+
+Publication date.
+
+Reading time.
+
+Read More link.
+
+All article links must open the correct article using its slug.
+
+Avoid duplicate article IDs.
+
+Section 6: Editorial inspiration
+
+Heading:
+
+"Your Best Life Is Built One Choice at a Time."
+
+Supporting content:
+
+"Every healthy habit, every thoughtful financial decision and every moment spent nurturing the people you love contributes to a more meaningful life."
+
+Include a CTA linking to Explore.
+
+Section 7: Footer
+
+Use the shared footer.
+
+9. PAGE 2 IMPLEMENTATION — EXPLORE / CATEGORIES
+
+This page must provide the complete article discovery experience.
+
+Heading:
+
+"Explore Ideas for a Better Life."
+
+Supporting copy:
+
+"Find inspiration, practical guidance and thoughtful stories across the things that matter most."
+
+Section 1: Category filters
+
+Implement these four filters:
+
+All Articles.
+
+Health & Wellness.
+
+Finance.
+
+Family.
+
+Default:
+All Articles.
+
+Requirements:
+
+Category filtering must work.
+
+Only matching articles should appear.
+
+Active filters must be visually distinguishable.
+
+Filtering must not cause a full browser reload.
+
+The URL query parameter should reflect the selected category.
+
+Browser back and forward navigation should restore the appropriate filter state.
+
+Invalid category query values should safely fall back to All Articles.
+
+Filters must work with keyboard and screen readers.
+
+Section 2: Featured story
+
+Display a featured article.
+
+When All Articles is selected, show the overall featured article.
+
+When a specific category is selected, show a featured article from that category.
+
+The selected article must be retrieved from the central article dataset.
+
+Section 3: Article listing
+
+Create a minimum dataset of nine complete articles.
+
+At least three articles per category.
+
+Use the following initial editorial titles:
+
+HEALTH & WELLNESS:
+
+Small Daily Habits That Can Transform Your Life.
+
+Simple Ways to Make Healthy Eating a Lifestyle.
+
+Why Rest Is Just as Important as Productivity.
+
+FINANCE:
+
+How to Build a Personal Budget That Actually Works.
+
+Smart Saving Habits for a More Secure Future.
+
+Understanding the Basics of Investing and Wealth Building.
+
+FAMILY:
+
+Building Stronger Family Relationships Through Communication.
+
+Simple Ways to Create More Meaningful Family Time.
+
+Balancing Work, Parenting and Personal Well-being.
+
+These are initial editorial topics, not the complete content requirement.
+
+Create useful article excerpts and complete article bodies for all nine articles.
+
+Each article must have:
+
+Unique ID.
+
+Unique slug.
+
+Title.
+
+Category.
+
+Excerpt.
+
+Cover image.
+
+Image alt text.
+
+Author.
+
+Publication date.
+
+Updated date.
+
+Reading time.
+
+Article body.
+
+Related article IDs.
+
+Featured status.
+
+Section 4: Search
+
+Implement a working search overlay.
+
+The search must work across:
+
+Article titles.
+
+Article excerpts.
+
+Article categories.
+
+Relevant article tags.
+
+Search requirements:
+
+Open from the global search icon.
+
+Close using the close button.
+
+Close using Escape.
+
+Provide a clear search input.
+
+Display matching articles.
+
+Show useful empty states.
+
+Clear the search query.
+
+Allow keyboard navigation.
+
+Open selected articles.
+
+Avoid creating a separate search page.
+
+Search should be case-insensitive and should handle partial matches.
+
+Search results must use the existing article dataset.
+
+Do not implement a fake search interface.
+
+Section 5: Load More
+
+If the dataset exceeds the initial visible number of articles, implement a working Load More button.
+
+It must progressively reveal additional existing articles.
+
+The button must disappear when there are no more articles to show.
+
+Do not simulate server requests.
+
+Section 6: Footer
+
+Use the global footer.
+
+10. PAGE 3 IMPLEMENTATION — ARTICLE DETAILS
+
+Implement one reusable Article Details template.
+
+Route:
+
+/article/:slug
+
+The application must dynamically render article content from the article dataset.
+
+Section 1: Breadcrumb
+
+Display:
+
+Home > Explore > Category > Article Title.
+
+Requirements:
+
+Home navigates to /.
+
+Explore navigates to /explore.
+
+Category navigates to the relevant Explore filter.
+
+The current article title is not a clickable link.
+
+Section 2: Article header
+
+Display:
+
+Category.
+
+Title.
+
+Excerpt.
+
+Author.
+
+Author avatar or initials.
+
+Publication date.
+
+Updated date, where applicable.
+
+Reading time.
+
+Section 3: Hero image
+
+Display the article's cover image.
+
+Use the correct image associated with the selected article.
+
+Maintain responsive image proportions.
+
+Provide meaningful alternative text.
+
+Section 4: Article body
+
+Implement a reusable article content renderer.
+
+Support these content blocks:
+
+H2 headings.
+
+H3 headings.
+
+Paragraphs.
+
+Ordered lists.
+
+Unordered lists.
+
+Blockquotes.
+
+Inline links.
+
+Informational callouts.
+
+Image blocks.
+
+Image captions.
+
+Bold and italic emphasis.
+
+Use structured article data rather than inserting raw HTML.
+
+Do not render untrusted HTML through dangerouslySetInnerHTML.
+
+Article content requirements
+
+All nine articles must have meaningful content.
+
+Each article should contain:
+
+An engaging introduction.
+
+Several well-organised sections.
+
+Practical guidance.
+
+Relevant examples.
+
+Actionable takeaways.
+
+A thoughtful conclusion.
+
+The content must be sufficiently developed to make the Article Details page feel like a genuine publication.
+
+Avoid superficial articles consisting of only a headline and two short paragraphs.
+
+Section 5: Reading tools
+
+Implement:
+
+A. READING PROGRESS
+
+Show reading progress as the reader scrolls.
+
+The indicator must:
+
+Update smoothly.
+
+Reflect actual article reading progress.
+
+Work on mobile and desktop.
+
+Avoid blocking content.
+
+B. TABLE OF CONTENTS
+
+Generate the table of contents from the article headings.
+
+Requirements:
+
+Each heading must have a stable anchor ID.
+
+Clicking an item must scroll to its corresponding heading.
+
+Active section indication is desirable.
+
+The component must work responsively.
+
+C. SHARE ARTICLE
+
+Implement native browser sharing when supported.
+
+Use the Web Share API.
+
+Fallback:
+Copy the article URL to the clipboard.
+
+Display accessible success or error feedback.
+
+D. BOOKMARK ARTICLE
+
+Implement a working save/bookmark control.
+
+Use browser localStorage.
+
+Requirements:
+
+Save by article ID or slug.
+
+Restore saved state after refresh.
+
+Prevent duplicate bookmarks.
+
+Allow removing bookmarks.
+
+Handle unavailable or invalid storage safely.
+
+Do not require a login.
+
+The bookmark control must not imply cross-device synchronisation.
+
+E. BACK TO TOP
+
+Implement a back-to-top control that appears appropriately while scrolling.
+
+Section 6: Editorial disclaimer
+
+Show the appropriate disclaimer based on article category.
+
+HEALTH:
+
+"Content on Kenti's Corner is for general educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis or treatment."
+
+FINANCE:
+
+"Financial content is provided for educational purposes only and does not constitute personalised financial, investment, tax or legal advice."
+
+FAMILY:
+
+"Family and relationship articles provide general educational perspectives and should not replace appropriate professional support where needed."
+
+Section 7: Author information
+
+Display:
+
+Author name.
+
+Avatar or initials.
+
+Short biography.
+
+Editorial contribution description.
+
+Use fictional sample author information only where clearly treated as sample editorial content.
+
+Never invent professional qualifications, medical licences, financial certifications or credentials.
+
+Section 8: Related articles
+
+Display three relevant articles.
+
+Prioritise:
+
+Articles in the same category.
+
+Articles with related themes.
+
+Other relevant articles if fewer than three same-category matches exist.
+
+Exclude the current article.
+
+Every related article must open the correct article slug using the same template.
+
+Section 9: Footer
+
+Use the shared global footer.
+
+11. CENTRAL CONTENT MANAGEMENT THROUGH STATIC DATA
+
+Create one central article dataset.
+
+Do not hardcode different versions of articles inside individual pages.
+
+Use a strongly typed Article interface.
+
+Recommended TypeScript structure:
+
+type Category =
+  | "health"
+  | "finance"
+  | "family";
+
+type ArticleBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; level: 2 | 3; text: string }
+  | { type: "list"; ordered: boolean; items: string[] }
+  | { type: "quote"; text: string; attribution?: string }
+  | { type: "callout"; title?: string; text: string }
+  | { type: "image"; src: string; alt: string; caption?: string };
+
+interface Article {
+  id: string;
+  slug: string;
+  title: string;
+  category: Category;
+  excerpt: string;
+  coverImage: string;
+  coverImageAlt: string;
+  authorId: string;
+  publishedAt: string;
+  updatedAt?: string;
+  readingTime: number;
+  tags: string[];
+  blocks: ArticleBlock[];
+  relatedArticleIds: string[];
+  featured: boolean;
+}
+
+The actual implementation may extend these interfaces where necessary.
+
+Data integrity requirements
+
+Every article must have a unique ID.
+
+Every article must have a unique slug.
+
+Every category must be valid.
+
+Every article must have a valid author reference.
+
+Every related article reference must point to an existing article.
+
+Every image must have a valid source or fallback.
+
+Publication dates must use consistent ISO date formatting.
+
+Reading times must be realistic.
+
+All articles must contain meaningful content.
+
+Create at least nine complete sample articles.
+
+Use reusable helper functions for:
+
+Article lookup by slug.
+
+Category filtering.
+
+Search.
+
+Related article selection.
+
+Reading-time calculations where needed.
+
+Do not create a database.
+
+Do not make fake API requests to retrieve locally stored content.
+
+12. CONTENT QUALITY AND EDITORIAL GUIDELINES
+
+The writing must be original, engaging, informative and useful.
+
+The application must not contain placeholder Lorem Ipsum text.
+
+Health & Wellness
+
+Cover:
+
+Nutrition.
+
+Physical activity.
+
+Mental well-being.
+
+Sleep.
+
+Stress management.
+
+Self-care.
+
+Healthy habits.
+
+General preventive health education.
+
+Do not:
+
+Diagnose medical conditions.
+
+Prescribe medication.
+
+Make unsupported health claims.
+
+Present general advice as personalised treatment.
+
+Invent scientific studies.
+
+Finance
+
+Cover:
+
+Budgeting.
+
+Saving.
+
+Financial discipline.
+
+Debt management.
+
+Investment fundamentals.
+
+Wealth building.
+
+Financial planning.
+
+Financial literacy.
+
+Do not:
+
+Guarantee investment returns.
+
+Present speculative investments as risk-free.
+
+Make unsupported financial claims.
+
+Confuse education with personalised financial advice.
+
+Invent financial statistics.
+
+Family
+
+Cover:
+
+Parenting.
+
+Relationships.
+
+Family communication.
+
+Marriage and partnerships.
+
+Child development.
+
+Family activities.
+
+Work-life balance.
+
+Family well-being.
+
+Do not:
+
+Present one family structure as the only valid structure.
+
+Use judgmental or culturally insensitive language.
+
+Make unsupported psychological claims.
+
+Promote harmful relationship advice.
+
+Editorial voice
+
+The writing style must be:
+
+Warm.
+
+Intelligent.
+
+Approachable.
+
+Practical.
+
+Positive.
+
+Respectful.
+
+Clear.
+
+Professional without being overly formal.
+
+Use a consistent editorial voice across all three categories.
+
+13. RESPONSIVE IMPLEMENTATION
+
+Implement mobile-first responsive behaviour.
+
+The application must be properly usable at:
+
+1440px desktop.
+
+1280px desktop.
+
+1024px tablet/compact desktop.
+
+768px tablet.
+
+390px mobile.
+
+375px mobile.
+
+320px narrow mobile.
+
+Desktop
+
+Preserve the editorial layout.
+
+Maintain balanced content widths.
+
+Use appropriate grids.
+
+Maintain generous whitespace.
+
+Keep navigation visually balanced.
+
+Avoid excessive content stretching.
+
+Tablet
+
+Adapt grids intelligently.
+
+Adjust typography and spacing.
+
+Ensure the header remains usable.
+
+Preserve the visual hierarchy.
+
+Mobile
+
+Use single-column layouts where appropriate.
+
+Implement an accessible collapsible navigation.
+
+Ensure comfortable article reading.
+
+Maintain appropriate image proportions.
+
+Use suitable touch targets.
+
+Prevent horizontal overflow.
+
+Ensure all text is readable.
+
+Make category filters usable.
+
+Make search overlay mobile-friendly.
+
+Ensure buttons remain accessible.
+
+Do not merely compress desktop layouts.
+
+Recompose the layout where required while preserving the original Stitch design direction.
+
+14. ACCESSIBILITY IMPLEMENTATION
+
+Target WCAG 2.2 Level AA.
+
+Implement:
+
+Semantic HTML5.
+
+Correct heading hierarchy.
+
+One primary H1 per page.
+
+Accessible navigation landmarks.
+
+Keyboard-accessible interactions.
+
+Visible focus states.
+
+Sufficient colour contrast.
+
+Proper image alt text.
+
+Accessible search input.
+
+Accessible buttons.
+
+Accessible dialogs.
+
+Appropriate ARIA attributes where necessary.
+
+Screen-reader-friendly status messages.
+
+Logical focus order.
+
+Skip-to-content link.
+
+Reduced-motion support.
+
+Accessible mobile navigation.
+
+Keyboard dismissal of overlays using Escape.
+
+Focus restoration after closing dialogs.
+
+Aim for at least 44 × 44 CSS pixel interactive targets where practical.
+
+Do not use colour as the only way to communicate a state.
+
+Ensure that custom controls do not unnecessarily replace native accessible HTML elements.
+
+15. SEO IMPLEMENTATION
+
+Implement appropriate technical and on-page SEO.
+
+Global
+
+Correct document language.
+
+Unique document title for each page state.
+
+Meta descriptions.
+
+Semantic page structure.
+
+Descriptive links.
+
+Meaningful image alt text.
+
+Open Graph metadata.
+
+Appropriate favicon support.
+
+Homepage
+
+Title:
+"Kenti's Corner | Living Your Best Life"
+
+Description:
+"Discover practical ideas and inspiration for health and wellness, smarter finances and stronger family relationships."
+
+Explore page
+
+Title:
+"Explore Lifestyle Articles | Kenti's Corner"
+
+Create a meaningful description for article discovery.
+
+Article page
+
+Generate metadata dynamically from the current article.
+
+Include:
+
+Article headline.
+
+Article description.
+
+Article image.
+
+Author.
+
+Date published.
+
+Date modified where applicable.
+
+Canonical URL where appropriate.
+
+Implement appropriate Article and BreadcrumbList structured data using valid JSON-LD.
+
+Use structured data only where it accurately represents the visible page content.
+
+Do not invent reviews, ratings, awards or endorsements.
+
+Routing and crawlability
+
+Ensure routes behave correctly on direct access and refresh.
+
+Use appropriate hosting fallback configuration where supported so client-side article routes resolve correctly.
+
+Do not allow the homepage to become the content of every unknown URL.
+
+16. PERFORMANCE OPTIMISATION
+
+Build for excellent performance.
+
+Use Google's Core Web Vitals as performance targets:
+
+Largest Contentful Paint: 2.5 seconds or less.
+
+Interaction to Next Paint: below 200 milliseconds.
+
+Cumulative Layout Shift: below 0.1.
+
+Implement:
+
+Responsive image sizing.
+
+Modern image formats where available.
+
+Lazy loading for below-the-fold images.
+
+Eager loading or appropriate priority for the main hero image.
+
+Explicit image dimensions or aspect ratios.
+
+Efficient component rendering.
+
+Minimal dependencies.
+
+Optimised font loading.
+
+Lightweight interactions.
+
+Proper event listener cleanup.
+
+Avoid unnecessary re-renders.
+
+Avoid oversized assets.
+
+Avoid unnecessary animations.
+
+Do not lazy-load the primary above-the-fold hero image if that would delay its rendering.
+
+Do not preload every image.
+
+Prioritise the actual visual content that matters.
+
+17. APPLICATION SECURITY AND RELIABILITY
+
+Even though this is a frontend-only application, implement good security practices.
+
+Requirements:
+
+Do not expose API keys.
+
+Do not include unnecessary secrets.
+
+Do not introduce unauthorised external services.
+
+Do not render untrusted HTML.
+
+Validate article slug inputs.
+
+Handle missing article records safely.
+
+Validate localStorage data before using it.
+
+Catch storage access errors.
+
+Avoid unsafe URL handling.
+
+Use secure external link attributes where appropriate.
+
+Avoid unnecessary third-party scripts.
+
+Do not store sensitive personal information.
+
+Do not introduce cookies or tracking systems unnecessarily.
+
+No personal user account data is required.
+
+Error handling
+
+Handle:
+
+Invalid article slug.
+
+Missing article data.
+
+Broken images.
+
+Empty search results.
+
+Empty bookmark state.
+
+Browser storage restrictions.
+
+Clipboard API failure.
+
+Unsupported Web Share API.
+
+Unexpected runtime errors.
+
+Provide helpful user-facing fallback states.
+
+Do not expose technical stack traces to readers.
+
+18. INTERACTION AND FUNCTIONALITY CHECKLIST
+
+Every visible interactive element must perform its intended action.
+
+Implement and verify:
+
+Feature
+
+Expected behaviour
+
+Logo
+
+Navigate home
+
+Home navigation
+
+Open homepage
+
+Explore navigation
+
+Open Explore page
+
+Health navigation
+
+Open Health filter
+
+Finance navigation
+
+Open Finance filter
+
+Family navigation
+
+Open Family filter
+
+Search icon
+
+Open search overlay
+
+Search input
+
+Filter articles
+
+Search close
+
+Close overlay
+
+Category filters
+
+Update visible articles
+
+Article cards
+
+Open correct article
+
+Featured story
+
+Open correct article
+
+Related stories
+
+Open correct article
+
+Breadcrumbs
+
+Navigate appropriately
+
+Load More
+
+Reveal more existing articles
+
+Share
+
+Native share or clipboard fallback
+
+Bookmark
+
+Save or remove bookmark
+
+Table of contents
+
+Navigate to article sections
+
+Reading progress
+
+Reflect actual scroll progress
+
+Back to top
+
+Scroll to page beginning
+
+Mobile menu
+
+Open and close navigation
+
+Footer links
+
+Perform their stated action
+
+Theme toggle
+
+Switch themes if included
+
+Remove any control that cannot be implemented meaningfully.
+
+Do not use buttons that simply display an alert as a substitute for real functionality.
+
+19. CODE QUALITY AND DEVELOPMENT STANDARDS
+
+Follow professional software engineering practices.
+
+TypeScript
+
+Use strict typing.
+
+Avoid unnecessary any.
+
+Define reusable interfaces and types.
+
+Type component props.
+
+Type state and event handlers.
+
+Handle nullable values explicitly.
+
+React
+
+Use functional components.
+
+Use React hooks appropriately.
+
+Keep components focused.
+
+Avoid unnecessary prop drilling.
+
+Use stable keys for lists.
+
+Avoid unnecessary state duplication.
+
+Use memoisation only where beneficial.
+
+Ensure proper effect cleanup.
+
+CSS
+
+Use a consistent naming strategy.
+
+Avoid excessive specificity.
+
+Avoid widespread inline styles.
+
+Use design tokens.
+
+Keep responsive rules organised.
+
+Avoid contradictory media queries.
+
+Ensure no horizontal overflow.
+
+Code maintenance
+
+Remove unused imports.
+
+Remove unused components.
+
+Remove dead code.
+
+Remove console errors.
+
+Remove debug logs.
+
+Remove placeholder implementations.
+
+Keep dependencies justified.
+
+Do not overwrite working project files unnecessarily.
+
+Inspect the existing generated project structure before making modifications.
+
+Preserve useful configuration and existing assets.
+
+20. TESTING AND QUALITY ASSURANCE
+
+Testing is mandatory.
+
+Do not consider the application complete simply because the code has been generated.
+
+A. BUILD VALIDATION
+
+Verify:
+
+Dependencies install correctly.
+
+Application starts successfully.
+
+Development server runs.
+
+Production build completes.
+
+No TypeScript errors.
+
+No unresolved imports.
+
+No missing assets.
+
+No broken component references.
+
+B. ROUTING TESTS
+
+Verify:
+
+/ loads the homepage.
+
+/explore loads the Explore page.
+
+/explore?category=health selects Health.
+
+/explore?category=finance selects Finance.
+
+/explore?category=family selects Family.
+
+/article/small-daily-habits-that-can-transform-your-life loads the correct article, provided this is the assigned slug.
+
+Refreshing an article URL does not break the application.
+
+Invalid slugs display the appropriate fallback within the Article Details template.
+
+Browser back and forward navigation work correctly.
+
+C. CONTENT TESTS
+
+Verify:
+
+At least nine articles exist.
+
+At least three articles exist per category.
+
+Every article has a unique ID.
+
+Every article has a unique slug.
+
+Every article has a valid category.
+
+Every article has an author.
+
+Every article has a meaningful excerpt.
+
+Every article has a cover image.
+
+Every article has an actual article body.
+
+Related article IDs resolve correctly.
+
+D. FUNCTIONAL TESTS
+
+Verify:
+
+Navigation.
+
+Category filters.
+
+Search.
+
+Search empty state.
+
+Article selection.
+
+Related articles.
+
+Load More.
+
+Bookmarks.
+
+Bookmark persistence after refresh.
+
+Share fallback.
+
+Reading progress.
+
+Table of contents.
+
+Back to top.
+
+Mobile navigation.
+
+Theme toggle if included.
+
+E. RESPONSIVE TESTS
+
+Inspect at:
+
+1440px.
+
+1280px.
+
+1024px.
+
+768px.
+
+390px.
+
+375px.
+
+320px.
+
+Verify:
+
+No horizontal scrolling.
+
+No clipped text.
+
+No overlapping components.
+
+No broken grids.
+
+No distorted imagery.
+
+No unusable buttons.
+
+No inaccessible mobile navigation.
+
+F. ACCESSIBILITY TESTS
+
+Verify:
+
+Keyboard navigation.
+
+Focus visibility.
+
+Heading structure.
+
+Button names.
+
+Image descriptions.
+
+Contrast.
+
+Dialog accessibility.
+
+Screen-reader labels.
+
+Reduced-motion support.
+
+G. BROWSER TESTS
+
+Check the application in current versions of:
+
+Google Chrome.
+
+Microsoft Edge.
+
+Mozilla Firefox.
+
+Safari where testing is available.
+
+H. CONSOLE AND NETWORK TESTS
+
+Inspect:
+
+Browser console.
+
+Failed resource requests.
+
+Missing images.
+
+Runtime exceptions.
+
+React warnings.
+
+Broken routes.
+
+Unnecessary external requests.
+
+Fix all issues that can be resolved within the defined scope.
+
+Do not claim a test passed if it was not actually executed.
+
+21. STRICT SCOPE CONTROL
+
+Before finalising the project, perform a strict scope audit.
+
+The finished application must contain exactly three page templates:
+
+HomePage.
+
+ExplorePage.
+
+ArticlePage.
+
+Do not introduce separate pages for:
+
+About.
+
+Contact.
+
+Health.
+
+Finance.
+
+Family.
+
+Search.
+
+Saved articles.
+
+Login.
+
+Registration.
+
+Administration.
+
+User profiles.
+
+Do not introduce authentication or a database.
+
+Do not introduce Firebase or backend services.
+
+Do not introduce AI chatbots or AI-generated content features.
+
+Do not add features simply because they are technically possible.
+
+Prioritise the requirements in this document.
+
+If there is a conflict between unnecessary functionality and the approved scope, the approved scope takes priority.
+
+22. IMPLEMENTATION EXECUTION STRATEGY
+
+Execute the project in controlled stages.
+
+PHASE 1: DESIGN ANALYSIS
+
+Inspect all attached Stitch designs.
+
+Identify:
+
+Page structures.
+
+Design tokens.
+
+Components.
+
+Assets.
+
+Responsive variations.
+
+Navigation.
+
+Footer.
+
+Content sections.
+
+Do not begin by redesigning the interface.
+
+PHASE 2: APPLICATION FOUNDATION
+
+Inspect the existing environment.
+
+Set up or verify:
+
+React.
+
+TypeScript.
+
+Routing.
+
+Global styles.
+
+Design tokens.
+
+Application layout.
+
+Shared components.
+
+PHASE 3: GLOBAL COMPONENTS
+
+Implement:
+
+Announcement bar.
+
+Header.
+
+Navigation.
+
+Mobile menu.
+
+Footer.
+
+Search overlay.
+
+Reusable buttons.
+
+Category badges.
+
+PHASE 4: CONTENT AND DATA
+
+Implement:
+
+Category data.
+
+Author data.
+
+Nine or more article records.
+
+Article content blocks.
+
+Related article relationships.
+
+Featured article selection.
+
+PHASE 5: HOMEPAGE
+
+Implement the homepage completely.
+
+PHASE 6: EXPLORE PAGE
+
+Implement:
+
+Category filters.
+
+Featured stories.
+
+Article listing.
+
+Search integration.
+
+Load More.
+
+PHASE 7: ARTICLE DETAILS
+
+Implement:
+
+Dynamic article lookup.
+
+Article body renderer.
+
+Table of contents.
+
+Reading progress.
+
+Bookmarking.
+
+Sharing.
+
+Related articles.
+
+Category-specific disclaimer.
+
+PHASE 8: RESPONSIVENESS AND ACCESSIBILITY
+
+Refine all layouts and interactions.
+
+PHASE 9: TESTING AND OPTIMISATION
+
+Execute the QA checklist.
+
+Correct identified problems.
+
+PHASE 10: FINAL VERIFICATION
+
+Confirm that:
+
+All three page templates work.
+
+All major interactions work.
+
+All content is present.
+
+The design matches the supplied Stitch references.
+
+There are no unnecessary backend services.
+
+The application builds successfully.
+
+Do not stop after creating the first page.
+
+Do not stop after producing a visual prototype.
+
+Complete all three pages and their shared functionality.
+
+If execution is interrupted by a tool or environment limitation, preserve the working project state and continue from the incomplete phase.
+
+23. FINAL ACCEPTANCE CRITERIA
+
+The project will only be considered complete when all the following conditions are satisfied.
+
+PRODUCT
+
+The application is called Kenti's Corner.
+
+The theme is Living Your Best Life.
+
+All three content categories are represented.
+
+Exactly three page templates exist.
+
+The application is browser-based.
+
+No authentication exists.
+
+No database exists.
+
+No backend is required.
+
+DESIGN
+
+Supplied Stitch designs are faithfully implemented.
+
+All three pages share a consistent design system.
+
+Desktop, tablet and mobile layouts work.
+
+Typography and spacing are consistent.
+
+Images are appropriate.
+
+The overall experience is premium and editorial.
+
+FUNCTIONALITY
+
+Navigation works.
+
+Category filtering works.
+
+Search works.
+
+Article links work.
+
+Article content renders dynamically.
+
+Related articles work.
+
+Bookmarks work.
+
+Sharing works with an appropriate fallback.
+
+Reading progress works.
+
+Table of contents works.
+
+Footer controls work.
+
+QUALITY
+
+Production build succeeds.
+
+No critical runtime errors.
+
+No broken internal links.
+
+No missing article data.
+
+No avoidable TypeScript errors.
+
+No significant accessibility defects.
+
+No horizontal overflow.
+
+No unnecessary external services.
+
+No unimplemented interactive controls.
+
+FINAL STANDARD
+
+The application should be suitable for presentation as a professional lifestyle publication and should meet contemporary international expectations for frontend engineering, UI/UX, accessibility, responsiveness, maintainability and performance.
+
+Do not settle for an implementation that merely looks good in the initial preview.
+
+The actual application must work.
+
+24. FINAL INSTRUCTION TO THE DEVELOPMENT AGENT
+
+Begin by examining the supplied Google Stitch designs and the existing project environment.
+
+Then implement the complete application according to this specification.
+
+Treat the original Stitch designs and this implementation specification as the two authoritative sources of truth.
+
+Where a visual detail is defined in Stitch, preserve it.
+
+Where functionality is defined in this prompt, implement it.
+
+Where a technical decision is not explicitly specified, choose the simplest reliable and maintainable solution that satisfies the requirements.
+
+Do not ask unnecessary clarification questions. Make sensible engineering decisions where the requirements are already clear.
+
+Do not invent extra features.
+
+Do not introduce unnecessary infrastructure.
+
+Do not create additional pages.
+
+Do not leave placeholder functionality.
+
+Do not claim successful testing without executing it.
+
+Your ultimate responsibility is to deliver a complete, working, polished, responsive, accessible and maintainable three-page web application for Kenti's Corner — not merely to generate code or reproduce screenshots.
